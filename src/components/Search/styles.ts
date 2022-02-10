@@ -5,10 +5,12 @@ export const Wrapper = styled.View`
   flex-direction: row;
   align-items: center;
 
-  background-color: ${({ theme }) => theme.colors.lightTheme.container}
+  background-color: ${({ theme }) => theme.colors.lightTheme.elements}
     
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.06);
   border-radius: 6px;
+
+  margin-bottom: 18px;
 `;
 
 export const Ionics = styled(Ionicons)`
@@ -19,5 +21,5 @@ export const Input = styled.TextInput`
   flex: 1;
   height: 100%;
 
-  color=${({ theme }) => theme.colors.lightTheme.background}
+  color=${({ theme }) => theme.colors.lightTheme.elements}
 `;

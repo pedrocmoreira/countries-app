@@ -11,7 +11,7 @@ export function Header() {
     <HeaderComponent.Wrapper>
       <StatusBar
         barStyle="dark-content"
-        backgroundColor={theme.colors.lightTheme.container}
+        backgroundColor={theme.colors.lightTheme.elements}
         translucent
       />
 

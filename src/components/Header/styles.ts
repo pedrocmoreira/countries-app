@@ -11,7 +11,7 @@ export const Wrapper = styled.View`
   height: ${RFValue(90)}px;
 
   margin-top: ${getStatusBarHeight()}px;
-  background-color: ${({ theme }) => theme.colors.lightTheme.container};
+  background-color: ${({ theme }) => theme.colors.lightTheme.elements};
   padding-horizontal: 20px;
 
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.03);
@@ -29,5 +29,7 @@ export const ToggleButtonWrapper = styled(BorderlessButton)`
 `;
 
 export const ToggleButtonText = styled.Text`
+  color: ${({ theme }) => theme.colors.lightTheme.text}
+  font-family: ${({ theme }) => theme.fonts.medium}
   margin-left: 8px;
 `;
