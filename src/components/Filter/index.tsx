@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 
 import * as FilterComponent from "./styles";
 
@@ -25,7 +25,7 @@ const options = [
   },
 ];
 
-export function Filter({ value, setValue }: Props) {
+function Filter({ value, setValue }: Props) {
   return (
     <>
       <FilterComponent.Wrapper>
@@ -50,3 +50,7 @@ export function Filter({ value, setValue }: Props) {
     </>
   );
 }
+
+export const FilterC = memo(Filter, (prevProps, nextProps) => {
+  return Object.is(prevProps.value, nextProps.value);
+});

@@ -57,4 +57,6 @@ export const FilterOptions = styled.View<IFilterOptionsProps>`
 
   position: absolute;
   top: 135px;
+
+  z-index: 1;
 `;
