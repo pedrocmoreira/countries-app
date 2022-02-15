@@ -28,22 +28,27 @@ export function Home() {
 
   const [loading, setLoading] = useState(false);
 
+  function handleCloseFilter() {
+    setShowFilterOptions(false);
+  }
+
   async function fetchData() {
     setLoading(true);
     try {
-      const response = await api.get("v2/lang/es");
+      const response = await api.get("v2/lang/pt");
 
+      console.log(response.data);
       const data = {
         name: {
-          common: response.data[0].name,
+          common: response.data.name,
         },
-        population: response.data[0].population,
-        region: response.data[0].region,
-        capital: response.data[0].capital,
-        flag: response.data[0].flag,
+        population: response.data.population,
+        region: response.data.region,
+        capital: response.data.capital,
+        flag: response.data.flag,
         flags: {
-          png: response.data[0].flags.png,
-          svg: response.data[0].flags.svg,
+          png: response.data.flags.png,
+          svg: response.data.flags.svg,
         },
       };
 
@@ -65,9 +70,11 @@ export function Home() {
       <Header />
       <HomeScreen.Content>
         <Search />
-        <FilterC value={showFilterOptions} setValue={setShowFilterOptions} />
+        <FilterC value={showFilterOptions} setValue={handleCloseFilter} />
 
-        {countries && <Card array={countries} />}
+        {countries.map((country) => {
+          return <Card key={country.name.common} array={country} />;
+        })}
       </HomeScreen.Content>
     </HomeScreen.Wrapper>
   );

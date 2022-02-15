@@ -12,19 +12,19 @@ export const Wrapper = styled.View`
   height: ${RFValue(50)}px;
 
   justify-content: center;
-  background-color: ${({ theme }) => theme.colors.lightTheme.elements}
+  background-color: ${({ theme }) => theme.colors.lightTheme.elements};
 
   margin-bottom: 18px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.06);
   border-radius: 6px;
 `;
 
-export const ButtonWrapper = styled(BorderlessButton)`
+export const ButtonWrapper = styled(RectButton)`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 
-  padding: 18px
+  padding: 18px;
 
   border-radius: 6px;
 `;

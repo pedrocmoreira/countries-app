@@ -4,7 +4,7 @@ import * as FilterComponent from "./styles";
 
 interface Props {
   value: boolean;
-  setValue: (value: boolean) => void;
+  setValue: () => void;
 }
 
 const options = [
@@ -29,7 +29,7 @@ function Filter({ value, setValue }: Props) {
   return (
     <>
       <FilterComponent.Wrapper>
-        <FilterComponent.ButtonWrapper onPress={() => setValue(!value)}>
+        <FilterComponent.ButtonWrapper onPress={() => setValue()}>
           <FilterComponent.ButtonText>
             Filter by region
           </FilterComponent.ButtonText>

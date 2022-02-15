@@ -14,31 +14,28 @@ interface Props {
       png: string;
       svg: string;
     };
-  }[];
+  };
 }
 
 export function Card({ array }: Props) {
-  console.log("epa renderizou");
   return (
     <CardComponent.Wrapper>
-      <CardComponent.FlagContainer source={{ uri: `${array[0].flags.png}` }} />
+      <CardComponent.FlagContainer source={{ uri: `${array?.flags?.png}` }} />
       <CardComponent.TextContainer>
-        <CardComponent.Title>{array[0].name.common}</CardComponent.Title>
+        <CardComponent.Title>{array?.name?.common}</CardComponent.Title>
         <CardComponent.SubTitle>
           Population:{" "}
           <CardComponent.TextValues>
-            {array[0].population}
+            {array?.population}
           </CardComponent.TextValues>
         </CardComponent.SubTitle>
         <CardComponent.SubTitle>
           Region:{" "}
-          <CardComponent.TextValues>{array[0].region}</CardComponent.TextValues>
+          <CardComponent.TextValues>{array?.region}</CardComponent.TextValues>
         </CardComponent.SubTitle>
         <CardComponent.SubTitle>
           Capital:{" "}
-          <CardComponent.TextValues>
-            {array[0].capital}
-          </CardComponent.TextValues>
+          <CardComponent.TextValues>{array?.capital}</CardComponent.TextValues>
         </CardComponent.SubTitle>
       </CardComponent.TextContainer>
     </CardComponent.Wrapper>
